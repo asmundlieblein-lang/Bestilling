@@ -15,12 +15,10 @@
     --light:  #e4d0b8;
     --white:  #ffffff;
     --red:    #c0392b;
-    --green:  #3d6b35;
     --r: 16px;
   }
   * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
   html { scroll-behavior: smooth; }
-
   body {
     font-family: 'DM Sans', sans-serif;
     background: var(--cream);
@@ -28,8 +26,6 @@
     min-height: 100vh;
     padding-bottom: 7rem;
   }
-
-  /* ── HEADER ── */
   .header {
     background: var(--dark);
     padding: 2.2rem 1.5rem 1.8rem;
@@ -59,8 +55,6 @@
     color: rgba(228,208,184,0.4);
     margin-top: 0.3rem;
   }
-
-  /* ── INFO STRIP ── */
   .info-strip {
     background: var(--crust);
     color: rgba(255,255,255,0.93);
@@ -71,8 +65,6 @@
     line-height: 1.6;
   }
   .info-strip strong { font-weight: 700; }
-
-  /* ── LOADING / ERROR ── */
   .loading-screen {
     display: flex;
     flex-direction: column;
@@ -91,7 +83,6 @@
     animation: spin 0.8s linear infinite;
   }
   @keyframes spin { to { transform: rotate(360deg); } }
-
   .error-box {
     background: #fdf0ee;
     border: 1.5px solid #f5c6bc;
@@ -105,13 +96,9 @@
     display: none;
   }
   .error-box.show { display: block; }
-
-  /* ── MAIN ── */
   main { max-width: 480px; margin: 0 auto; padding: 0 1rem; }
   #formContent { display: none; }
   #formContent.show { display: block; }
-
-  /* ── STEP ── */
   .step {
     display: flex;
     align-items: center;
@@ -133,8 +120,6 @@
     font-size: 1.05rem;
     font-weight: 700;
   }
-
-  /* ── INPUTS ── */
   .input-group { display: flex; flex-direction: column; gap: 0.6rem; }
   .field input, .field textarea {
     width: 100%;
@@ -151,10 +136,7 @@
   .field input::placeholder, .field textarea::placeholder { color: #c4aa90; }
   .field input:focus, .field textarea:focus { outline: none; border-color: var(--crust); }
   .field textarea { resize: none; height: 80px; }
-
-  /* ── PRODUKT-KORT ── */
   .products { display: flex; flex-direction: column; gap: 0.65rem; }
-
   .product-card {
     background: var(--white);
     border: 1.5px solid var(--light);
@@ -164,23 +146,15 @@
     align-items: center;
     gap: 0.9rem;
     transition: border-color 0.2s, box-shadow 0.2s;
-    position: relative;
-    overflow: hidden;
   }
   .product-card.has-qty {
     border-color: var(--crust);
     box-shadow: 0 2px 14px rgba(184,106,46,0.13);
   }
-  .product-card.utsolgt {
-    opacity: 0.55;
-    background: var(--warm);
-  }
-
+  .product-card.utsolgt { opacity: 0.55; background: var(--warm); }
   .prod-emoji { font-size: 2.2rem; flex-shrink: 0; line-height: 1; }
   .prod-info { flex: 1; min-width: 0; }
   .prod-name { font-weight: 600; font-size: 0.95rem; }
-  .prod-desc { font-size: 0.75rem; color: var(--mid); margin-top: 0.15rem; }
-
   .utsolgt-tag {
     display: none;
     font-size: 0.65rem;
@@ -194,7 +168,6 @@
     margin-top: 0.3rem;
   }
   .product-card.utsolgt .utsolgt-tag { display: inline-block; }
-
   .igjen-tag {
     font-size: 0.68rem;
     color: #b07020;
@@ -202,9 +175,7 @@
     padding: 0.15rem 0.5rem;
     border-radius: 4px;
     margin-top: 0.3rem;
-    display: none;
   }
-
   .prod-right { display: flex; flex-direction: column; align-items: flex-end; gap: 0.5rem; flex-shrink: 0; }
   .prod-price {
     font-family: 'Playfair Display', serif;
@@ -213,8 +184,6 @@
     color: var(--crust);
     white-space: nowrap;
   }
-
-  /* ── STEPPER ── */
   .stepper {
     display: flex;
     align-items: center;
@@ -245,8 +214,6 @@
     color: var(--dark);
     font-family: 'Playfair Display', serif;
   }
-
-  /* ── HENTETIDER ── */
   .time-grid { display: flex; flex-direction: column; gap: 0.5rem; }
   .time-slot {
     display: flex;
@@ -280,8 +247,6 @@
   }
   .time-slot.selected .radio-ring::after { transform: scale(1); }
   .time-slot-text { font-size: 0.9rem; font-weight: 500; }
-
-  /* ── SUMMARY ── */
   .summary {
     background: var(--dark);
     border-radius: var(--r);
@@ -323,14 +288,12 @@
     font-weight: 700;
     color: var(--light);
   }
-  .vipps-hint {
+  .betaling-hint {
     font-size: 0.72rem;
     color: rgba(228,208,184,0.35);
     text-align: center;
     margin-top: 0.6rem;
   }
-
-  /* ── SUBMIT ── */
   .submit-wrap {
     position: fixed;
     bottom: 0; left: 0; right: 0;
@@ -341,7 +304,6 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 0.5rem;
     width: 100%;
     max-width: 480px;
     margin: 0 auto;
@@ -356,15 +318,9 @@
     cursor: not-allowed;
     transition: background 0.25s, color 0.25s, transform 0.1s;
   }
-  .submit-btn.ready {
-    background: var(--crust);
-    color: white;
-    cursor: pointer;
-  }
+  .submit-btn.ready { background: var(--crust); color: white; cursor: pointer; }
   .submit-btn.ready:active { transform: scale(0.98); }
   .submit-btn.loading { background: var(--mid); color: rgba(255,255,255,0.6); cursor: wait; }
-
-  /* ── SUCCESS ── */
   .success {
     display: none;
     text-align: center;
@@ -379,7 +335,7 @@
     margin-bottom: 0.6rem;
   }
   .success p { color: var(--mid); font-size: 0.9rem; line-height: 1.65; }
-  .success .ordre-id {
+  .ordre-id {
     display: inline-block;
     margin-top: 1.2rem;
     background: var(--warm);
@@ -390,17 +346,17 @@
     color: var(--mid);
     line-height: 1.7;
   }
-  .success .ordre-id strong { font-size: 1.05rem; color: var(--dark); display: block; }
-  .vipps-block {
+  .ordre-id strong { font-size: 1.05rem; color: var(--dark); display: block; }
+  .bekreftelse-info {
     margin-top: 1rem;
-    background: var(--dark);
-    color: var(--light);
+    background: var(--warm);
+    border: 1.5px solid var(--light);
     border-radius: var(--r);
     padding: 1rem 1.5rem;
     font-size: 0.85rem;
+    color: var(--mid);
     line-height: 1.7;
   }
-  .vipps-block strong { font-size: 1.1rem; color: var(--crust); }
 </style>
 </head>
 <body>
@@ -410,52 +366,33 @@
   <div class="sub">Håndverksbrød fra eget kjøkken</div>
 </header>
 
-<div class="info-strip" id="infoStrip">
-  Laster inn ukens tilbud…
-</div>
+<div class="info-strip" id="infoStrip">Laster inn ukens tilbud…</div>
 
 <main>
-
-  <!-- LASTER -->
   <div class="loading-screen" id="loadingScreen">
     <div class="spinner"></div>
     <span>Henter ukens meny…</span>
   </div>
 
-  <!-- FEIL -->
   <div class="error-box" id="errorBox"></div>
 
-  <!-- SKJEMA -->
   <div id="formContent">
-
-    <div class="step">
-      <div class="step-num">1</div>
-      <div class="step-title">Din informasjon</div>
-    </div>
+    <div class="step"><div class="step-num">1</div><div class="step-title">Din informasjon</div></div>
     <div class="input-group">
-      <div class="field"><input type="text"  id="navn"     placeholder="Navn"           autocomplete="name"></div>
-      <div class="field"><input type="tel"   id="mobil"    placeholder="Mobilnummer"    autocomplete="tel"></div>
-      <div class="field"><input type="email" id="epost"    placeholder="E-post"         autocomplete="email"></div>
+      <div class="field"><input type="text"  id="navn"  placeholder="Navn"        autocomplete="name"></div>
+      <div class="field"><input type="tel"   id="mobil" placeholder="Mobilnummer" autocomplete="tel"></div>
+      <div class="field"><input type="email" id="epost" placeholder="E-post"      autocomplete="email"></div>
     </div>
 
-    <div class="step">
-      <div class="step-num">2</div>
-      <div class="step-title">Velg produkter</div>
-    </div>
+    <div class="step"><div class="step-num">2</div><div class="step-title">Velg produkter</div></div>
     <div class="products" id="productList"></div>
 
-    <div class="step">
-      <div class="step-num">3</div>
-      <div class="step-title">Hentetidspunkt</div>
-    </div>
+    <div class="step"><div class="step-num">3</div><div class="step-title">Ønsket hentetidspunkt</div></div>
     <div class="time-grid" id="timeGrid"></div>
 
-    <div class="step">
-      <div class="step-num">4</div>
-      <div class="step-title">Kommentar (valgfritt)</div>
-    </div>
+    <div class="step"><div class="step-num">4</div><div class="step-title">Kommentar (valgfritt)</div></div>
     <div class="field">
-      <textarea id="kommentar" placeholder="Allergier, ønsker eller annet…"></textarea>
+      <textarea id="kommentar" placeholder="Spesielle ønsker eller annet…"></textarea>
     </div>
 
     <div class="summary" id="summary">
@@ -466,29 +403,25 @@
         <span>Totalt</span>
         <span id="summaryTotal">0 kr</span>
       </div>
-      <div class="vipps-hint" id="vippsHint">Betaling via Vipps etter bekreftelse</div>
+      <div class="betaling-hint">Betaling skjer ved henting</div>
     </div>
-
   </div>
 
-  <!-- SUKSESS -->
   <div class="success" id="successScreen">
     <div class="success-bread">🥖</div>
-    <h2>Bestilling mottatt!</h2>
+    <h2>Takk for bestillingen!</h2>
     <p id="successMsg"></p>
     <div class="ordre-id">
       <strong id="successOrdreId">—</strong>
       Ta vare på denne referansen
     </div>
-    <div class="vipps-block" id="vippsBlock">
-      Betal <strong id="successTotal">—</strong> via Vipps<br>
-      til <strong id="vippsNrSuccess">—</strong> for å bekrefte bestillingen
+    <div class="bekreftelse-info">
+      Du mottar en bekreftelse på e-post med tid og sted for henting.<br>
+      Betaling skjer ved henting.
     </div>
   </div>
-
 </main>
 
-<!-- FAST KNAPP -->
 <div class="submit-wrap" id="submitWrap">
   <button class="submit-btn" id="submitBtn" onclick="sendBestilling()">
     <span id="submitTxt">Legg inn bestilling</span>
@@ -496,33 +429,19 @@
 </div>
 
 <script>
-// ════════════════════════════════════════════════════════════
-//  KONFIG – OPPDATER DETTE
-// ════════════════════════════════════════════════════════════
 const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwoHIKkHuk1HIkmfDdtMq73R42bq_F1VDoXzIo8w4CKdjBOtVLcclQS00Wo7GGL6JE8jw/exec";
-// ════════════════════════════════════════════════════════════
 
-let produkter  = [];
-let qty        = {};
-let selectedTime = null;
-let vippsNr    = "";
-let konfig     = {};
+let produkter = [], qty = {}, selectedTime = null, konfig = {};
 
-// ── INIT ─────────────────────────────────────────────────
 window.addEventListener('DOMContentLoaded', hentLager);
 
 async function hentLager() {
   try {
-    const res  = await fetch(SCRIPT_URL);
-    const data = await res.json();
-
+    const data = await fetch(SCRIPT_URL).then(r => r.json());
     if (!data.ok) throw new Error(data.feil || "Ukjent feil");
-
     produkter = data.produkter.filter(p => p.aktiv);
     konfig    = data.konfig || {};
-    vippsNr   = konfig.vipps || "—";
 
-    // Info-strip
     const strip = document.getElementById('infoStrip');
     if (konfig.frist && konfig.salgsdato) {
       strip.innerHTML = `Frist: <strong>${konfig.frist}</strong> &nbsp;·&nbsp; Henting: <strong>${konfig.salgsdato}</strong>`;
@@ -530,76 +449,53 @@ async function hentLager() {
       strip.style.display = 'none';
     }
 
-    // Vipps-hint
-    document.getElementById('vippsHint').textContent =
-      `Betaling via Vipps til ${vippsNr} etter bekreftelse`;
-    document.getElementById('vippsNrSuccess').textContent = vippsNr;
-
     byggProdukter();
     byggHentetider();
-
     document.getElementById('loadingScreen').style.display = 'none';
     document.getElementById('formContent').classList.add('show');
-
   } catch (err) {
     document.getElementById('loadingScreen').style.display = 'none';
-    vis_feil("Kunne ikke laste meny. Prøv igjen om litt.\n\n(" + err.message + ")");
+    vis_feil("Kunne ikke laste meny. Prøv igjen om litt. (" + err.message + ")");
   }
 }
 
-// ── BYGG PRODUKTER ───────────────────────────────────────
 function byggProdukter() {
   const list = document.getElementById('productList');
   list.innerHTML = '';
-
   produkter.forEach(p => {
     qty[p.id] = 0;
-
-    const erUtsolgt = p.utsolgt;
-    const fåIgjen   = !erUtsolgt && p.igjen <= 3;
-
+    const fåIgjen = !p.utsolgt && p.igjen <= 3;
     const card = document.createElement('div');
-    card.className = 'product-card' + (erUtsolgt ? ' utsolgt' : '');
+    card.className = 'product-card' + (p.utsolgt ? ' utsolgt' : '');
     card.id = `card-${p.id}`;
     card.innerHTML = `
       <div class="prod-emoji">🍞</div>
       <div class="prod-info">
         <div class="prod-name">${p.navn}</div>
-        <div class="prod-desc" id="desc-${p.id}"></div>
         <div class="utsolgt-tag">Utsolgt</div>
-        ${fåIgjen ? `<div class="igjen-tag" style="display:inline-block">Kun ${p.igjen} igjen</div>` : ''}
+        ${fåIgjen ? `<div class="igjen-tag">Kun ${p.igjen} igjen</div>` : ''}
       </div>
       <div class="prod-right">
         <div class="prod-price">${p.pris} kr</div>
-        <div class="stepper" id="stepper-${p.id}">
+        <div class="stepper">
           <button onclick="endreQty(${p.id}, -1)" id="minus-${p.id}" disabled>−</button>
           <div class="stepper-qty" id="qty-${p.id}">0</div>
-          <button onclick="endreQty(${p.id}, 1)" ${erUtsolgt ? 'disabled' : ''}>+</button>
+          <button onclick="endreQty(${p.id}, 1)" ${p.utsolgt ? 'disabled' : ''}>+</button>
         </div>
-      </div>
-    `;
+      </div>`;
     list.appendChild(card);
   });
 }
 
-// ── BYGG HENTETIDER ──────────────────────────────────────
 function byggHentetider() {
-  const grid = document.getElementById('timeGrid');
+  const grid  = document.getElementById('timeGrid');
   grid.innerHTML = '';
-
-  const tider = konfig.hentetider && konfig.hentetider.length
-    ? konfig.hentetider
-    : ["kl. 10:00–11:00", "kl. 11:00–12:00", "kl. 12:00–13:00"];
-
-  const dato = konfig.salgsdato || "";
-
+  const tider = konfig.hentetider?.length ? konfig.hentetider : ["kl. 10:00–11:00", "kl. 11:00–12:00", "kl. 12:00–13:00"];
+  const dato  = konfig.salgsdato || "";
   tider.forEach(tid => {
     const slot = document.createElement('div');
     slot.className = 'time-slot';
-    slot.innerHTML = `
-      <div class="radio-ring"></div>
-      <span class="time-slot-text">${dato ? dato + ' ' : ''}${tid}</span>
-    `;
+    slot.innerHTML = `<div class="radio-ring"></div><span class="time-slot-text">${dato ? dato + ' ' : ''}${tid}</span>`;
     slot.addEventListener('click', () => {
       document.querySelectorAll('.time-slot').forEach(s => s.classList.remove('selected'));
       slot.classList.add('selected');
@@ -610,57 +506,42 @@ function byggHentetider() {
   });
 }
 
-// ── STEPPER ──────────────────────────────────────────────
 function endreQty(id, delta) {
   const p = produkter.find(x => x.id == id);
   if (!p || p.utsolgt) return;
-
   qty[id] = Math.max(0, Math.min(p.igjen, qty[id] + delta));
-
   document.getElementById(`qty-${id}`).textContent = qty[id];
   document.getElementById(`minus-${id}`).disabled = qty[id] === 0;
-
-  const card = document.getElementById(`card-${id}`);
-  card.classList.toggle('has-qty', qty[id] > 0);
-
+  document.getElementById(`card-${id}`).classList.toggle('has-qty', qty[id] > 0);
   oppdaterSummary();
   oppdaterKnapp();
 }
 
-// ── SUMMARY ──────────────────────────────────────────────
 function oppdaterSummary() {
-  const linjer  = produkter.filter(p => qty[p.id] > 0);
-  const total   = linjer.reduce((s, p) => s + qty[p.id] * p.pris, 0);
-  const summary = document.getElementById('summary');
-
-  if (linjer.length === 0) { summary.classList.remove('show'); return; }
-
-  summary.classList.add('show');
+  const linjer = produkter.filter(p => qty[p.id] > 0);
+  const total  = linjer.reduce((s, p) => s + qty[p.id] * p.pris, 0);
+  const el     = document.getElementById('summary');
+  if (!linjer.length) { el.classList.remove('show'); return; }
+  el.classList.add('show');
   document.getElementById('summaryLines').innerHTML = linjer.map(p =>
-    `<div class="summary-line">
-      <span>${qty[p.id]}× ${p.navn}</span>
-      <span>${qty[p.id] * p.pris} kr</span>
-    </div>`
+    `<div class="summary-line"><span>${qty[p.id]}× ${p.navn}</span><span>${qty[p.id] * p.pris} kr</span></div>`
   ).join('');
   document.getElementById('summaryTotal').textContent = total + ' kr';
 }
 
-// ── KNAPP ────────────────────────────────────────────────
 function oppdaterKnapp() {
-  const navn  = document.getElementById('navn').value.trim();
-  const mobil = document.getElementById('mobil').value.trim();
-  const epost = document.getElementById('epost').value.trim();
-  const harQty = produkter.some(p => qty[p.id] > 0);
-  const btn = document.getElementById('submitBtn');
-  const ready = navn && mobil && epost && harQty && selectedTime;
-  btn.classList.toggle('ready', !!ready);
+  const ready = document.getElementById('navn').value.trim() &&
+                document.getElementById('mobil').value.trim() &&
+                document.getElementById('epost').value.trim() &&
+                produkter.some(p => qty[p.id] > 0) &&
+                selectedTime;
+  document.getElementById('submitBtn').classList.toggle('ready', !!ready);
 }
 
 ['navn','mobil','epost'].forEach(id =>
   document.getElementById(id).addEventListener('input', oppdaterKnapp)
 );
 
-// ── SEND BESTILLING ──────────────────────────────────────
 async function sendBestilling() {
   const btn = document.getElementById('submitBtn');
   if (!btn.classList.contains('ready')) return;
@@ -669,50 +550,36 @@ async function sendBestilling() {
   const mobil     = document.getElementById('mobil').value.trim();
   const epost     = document.getElementById('epost').value.trim();
   const kommentar = document.getElementById('kommentar').value.trim();
-
-  const linjer = produkter
-    .filter(p => qty[p.id] > 0)
+  const linjer    = produkter.filter(p => qty[p.id] > 0)
     .map(p => ({ id: p.id, navn: p.navn, antall: qty[p.id], pris: p.pris }));
-
   const total = linjer.reduce((s, l) => s + l.antall * l.pris, 0);
 
-  // Loading-state
   btn.classList.remove('ready');
   btn.classList.add('loading');
   document.getElementById('submitTxt').textContent = 'Sender…';
 
   try {
-    const res  = await fetch(SCRIPT_URL, {
-      method:  'POST',
-      body: JSON.stringify({
-        action:   'bestill',
-        navn, mobil, epost, kommentar,
-        hentetid: selectedTime,
-        produkter: linjer,
-      }),
-    });
-    const data = await res.json();
+    const data = await fetch(SCRIPT_URL, {
+      method: 'POST',
+      body: JSON.stringify({ action: 'bestill', navn, mobil, epost, kommentar, hentetid: selectedTime, produkter: linjer }),
+    }).then(r => r.json());
 
     if (!data.ok) {
-      // Kan være lager-konflikt
       vis_feil(data.feil || "Noe gikk galt. Prøv igjen.");
-      if (data.oppdaterLager) await hentLager(); // refresh lager
+      if (data.oppdaterLager) await hentLager();
       btn.classList.remove('loading');
       btn.classList.add('ready');
       document.getElementById('submitTxt').textContent = 'Legg inn bestilling';
       return;
     }
 
-    // Suksess
     document.getElementById('formContent').style.display = 'none';
     document.getElementById('submitWrap').style.display  = 'none';
-    const s = document.getElementById('successScreen');
-    s.classList.add('show');
+    document.getElementById('successScreen').classList.add('show');
     document.getElementById('successMsg').innerHTML =
       `Hei <strong>${navn}</strong>! Vi har mottatt bestillingen din på ` +
       linjer.map(l => `${l.antall}× ${l.navn}`).join(', ') + '.';
     document.getElementById('successOrdreId').textContent = data.ordreId;
-    document.getElementById('successTotal').textContent   = total + ' kr';
 
   } catch (err) {
     vis_feil("Nettverksfeil – sjekk internett og prøv igjen.");
@@ -730,6 +597,5 @@ function vis_feil(msg) {
   setTimeout(() => box.classList.remove('show'), 6000);
 }
 </script>
-
 </body>
 </html>
